@@ -1,0 +1,281 @@
+/* Colors 
+Orange - #bf5700
+Gray -   #333f48
+White -  #ffffff
+ */
+
+/* Container/Background */
+#container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #333f48;
+}
+
+/* Navigation Bar */
+#navbar {
+    background-color: #bf5700;
+    width: 100%;
+    height: 10%;
+}
+
+/* Navbar Logo */
+#navbar .nav-logo {
+    float: left;
+    width: 5%;
+    margin: 0.2%;
+}
+
+.nav-logo h1 {
+    position: absolute;
+    margin-left: 6%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    color: #ffffff;
+}
+
+/* Navbar Search */
+#navbar .nav-search {
+    float: left;
+    margin-top: 1.5%;
+    margin-left: 20%;
+}
+
+.nav-search input {
+    border-radius: 25px;
+    width: 300%;
+    padding: 10%;
+    border: none;
+}
+
+/* Navbar Links */
+#navbar .nav-link {
+    float: right;
+    width: 35%;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav-link a {
+    float: left;
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    padding-top: 7%;
+    padding-right: 5%;
+    padding-bottom: 7%;
+    padding-left: 5%;
+    margin-left: 0.2%;
+    border-left: 1px solid black;
+
+}
+
+.nav-link a:hover {
+    background-color: #ffffff;
+    color: #bf5700;
+}
+
+.nav-link img {
+    float: left;
+    height: 80%;
+    width: 15%;
+    margin-top: 2%;
+    padding-right: 5%;
+}
+
+footer {
+    position:absolute;
+    bottom:0;
+    width: auto;
+    margin: auto;
+    background:#ffffff;
+ }
+
+/* HOME PAGE START */
+
+/* Filter */
+#filter-section {
+    float: left;
+    background-color: #ffffff;
+    width: 15%;
+    height: 30%;
+    margin-top: 2%;
+    margin-left: 5%;
+    border-radius: 1em;
+}
+
+#filter-section h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 2px solid black;
+}
+
+#filter-section form {
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 12pt;
+}
+
+/* Main Content */
+#content {
+    float: left;
+    background-color: #ffffff;
+    width: 50%;
+    height: 85%;
+    margin-top: 2%;
+    margin-right: 3%;
+    margin-left: 5%;
+    overflow: scroll;
+    overflow-x: hidden;
+    border-radius: 1em;
+}
+
+#content h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 20pt;
+    text-align: left;
+}
+
+/* Main Content Piece */
+#content .content-piece {
+    border: 2px solid #333f48;
+    margin: 1%;
+    height: 25%;
+    border-radius: 1em;
+    text-align: center;
+}
+
+#content .content-piece p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 30pt;
+}
+
+#content .info {
+    float: left;
+
+}
+
+#content .info table{
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    
+}
+
+#content .class-rating {
+    float: right;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#content .professor-rating {
+    float: right;
+}
+
+#content .rate-button {
+    clear: both;
+    width: 20%;
+    background-color: #bf5700;
+    border-radius: 1em;
+    padding: 0.5%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#content .rate-button a {
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+/* News */
+#news-section {
+    float: left;
+    background-color: #ffffff;
+    width: 20%;
+    height: 60%;
+    margin-top: 2%;
+    border-radius: 1em;
+}
+
+#news-section a {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: black;
+}
+
+#news-section h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 2px solid black;
+}
+
+/* HOME PAGE END */
+
+/* CONTACT PAGE START */
+
+/* Contact */
+#contact .contact {
+    background-color: #ffffff;
+    width: 90%;
+    height: 85%;
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1em;
+}
+
+/* Contact Top */
+#contact .contact-top {
+    float: left;
+    width: 40%;
+    height: 40%;
+    margin-top: 2%;
+    margin-left: 4%;
+    margin-right: 4%;
+    border: 1px solid black;
+}
+
+/* Contact Bottom */
+#contact .contact-bot{
+    float: left;
+    width: 40%;
+    height: 40%;
+    margin-top: 5%;
+    margin-left: 4%;
+    margin-right: 4%;
+    border: 1px solid black;
+}
+
+/* Contact Piece */
+#contact .contact-piece img {
+    float: left;
+    width: 38.5%;
+    height: 100%;
+}
+
+#contact .contact-piece table {
+    margin-left: 25%;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+
+}
+
+
+
+
+
+
