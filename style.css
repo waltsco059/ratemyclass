@@ -68,8 +68,7 @@ White -  #ffffff
     padding-right: 5%;
     padding-bottom: 7%;
     padding-left: 5%;
-    margin-left: 0.2%;
-    border-left: 1px solid black;
+    margin-left: 0%;
 
 }
 
@@ -114,12 +113,11 @@ footer {
     border-bottom: 2px solid black;
 }
 
-#filter-section form {
-    text-align: left;
+#filter-section table {
     font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
     font-size: 12pt;
 }
+
 
 /* Main Content */
 #content {
@@ -140,6 +138,77 @@ footer {
     font-weight: bold;
     font-size: 20pt;
     text-align: left;
+}
+
+/* Main Content Header */
+#content .content-header {
+    border: 2px solid #333f48;
+    margin: 1%;
+    height: 10%;
+    border-radius: 1em;
+    text-align: center;
+}
+
+#content .content-header p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+}
+
+/* Add Class */
+#content .add-class {
+    margin: 1%;
+    height: 5%;
+    text-align: center;
+}
+
+.open-button {
+  background-color: #333f48;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.form-popup {
+  display: none;
+  position: fixed;
+  color: white;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid black;
+  z-index: 9;
+}
+
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: #333f48;
+}
+
+.form-container input[type=text] {
+  width: 90%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: white;
+}
+
+.form-container .btn {
+  background-color: #bf5700;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
 }
 
 /* Main Content Piece */
@@ -199,32 +268,12 @@ footer {
 
 }
 
-/* Description */
-#description {
-    float: right;
-    background-color: #ffffff;
-    width: 15%;
-    height: 30%;
-    margin-top: 2%;
-    margin-left: 0%;
-    margin-right: 2%;
-    border-radius: 1em;
-}
-
-#description h1 {
-    text-align: center;
-}
-
-#description p {
-    margin-left: 5%;
-}
-
 /* News */
 #news-section {
     float: left;
     background-color: #ffffff;
     width: 20%;
-    height: 60%;
+    height: 80%;
     margin-top: 2%;
     border-radius: 1em;
 }
@@ -283,15 +332,15 @@ footer {
 /* Contact Piece */
 #contact .contact-piece img {
     float: left;
-    width: 38.5%;
-    height: 100%;
+    width: 35%;
+    margin-top: 2%;
+    margin-left: 1%;
 }
 
 #contact .contact-piece table {
     margin-left: 25%;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-
 }
 
 
