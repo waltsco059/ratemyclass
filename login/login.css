@@ -1,0 +1,29 @@
+.login-section {
+    background-color: #ffffff;
+    width: 40%;
+    padding: 0.5em;
+    margin-top: 2%;
+    margin-left: 2%;
+    border-radius: 1em;
+}
+
+h1 {
+	text-align: center;
+}
+
+h2 {
+	margin: 0;
+}
+
+.section {
+	margin: 1em;
+}
+
+footer {
+	margin: 4em;
+	text-align: center;
+}
+
+footer span {
+	margin: 0 1em;
+}
