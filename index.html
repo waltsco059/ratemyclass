@@ -45,71 +45,72 @@
         <!-- Filter -->
         <div id="filter-section">
             <h1>Class Filter</h1>
-            <table>
             <form action="#">
-                <tr>
-                    <td><label for="filter-college">College</label></td>
-                    <td><select id="filter-college" name="filter-college">
-                        <option value="any">Any</option>
-                        <option value="cns">Natural Sciences</option>
-                        <option value="cola">Liberal Arts</option>
-                        <option value="engi">Engineering</option>
-                        <option value="busi">Business</option>
-                    </select></td>
-                </tr>
+                <table>
+                    <tr>
+                        <td><label for="filter-college">College</label></td>
+                        <td><select id="filter-college" name="filter-college">
+                            <option value="any">Any</option>
+                            <option value="cns">Natural Sciences</option>
+                            <option value="cola">Liberal Arts</option>
+                            <option value="engi">Engineering</option>
+                            <option value="busi">Business</option>
+                        </select></td>
+                    </tr>
 
-                <tr>
-                    <td><label for="filter-semester">Semester</label></td>
-                    <td><select id="filter-semester" name="filter-semester">
-                        <option value="any">Any</option>
-                        <option value="s22">Spring 2022</option>
-                        <option value="f21">Fall 2021</option>
-                        <option value="sp21">Spring 2021</option>
-                        <option value="fa20">Fall 2020</option>
-                    </select></td>
-                </tr>
+                    <tr>
+                        <td><label for="filter-semester">Semester</label></td>
+                        <td><select id="filter-semester" name="filter-semester">
+                            <option value="any">Any</option>
+                            <option value="s22">Spring 2022</option>
+                            <option value="f21">Fall 2021</option>
+                            <option value="sp21">Spring 2021</option>
+                            <option value="fa20">Fall 2020</option>
+                        </select></td>
+                    </tr>
 
-                <td><label for="filter-difficulty">Difficulty</label></td>
-                <td><select id="filter-difficulty" name="filter-difficulty">
-                    <option value="any">Any</option>
-                    <option value="not">Not Difficult</option>
-                    <option value="easy">Easy</option>
-                    <option value="medium">Medium</option>
-                    <option value="difficult">Difficult</option>
-                    <option value="very">Very Difficult</option>
-                </select></td>
-            </tr>
+                    <tr>
+                        <td><label for="filter-difficulty">Difficulty</label></td>
+                        <td><select id="filter-difficulty" name="filter-difficulty">
+                            <option value="any">Any</option>
+                            <option value="not">Not Difficult</option>
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="difficult">Difficult</option>
+                            <option value="very">Very Difficult</option>
+                        </select></td>
+                    </tr>
 
-            <tr>
-                <td><label for="filter-prating">Professor Rating</label></td>
-                <td><select id="filter-prating" name="filter-prating">
-                    <option value="any">Any</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select></td>
-            </tr>
+                    <tr>
+                        <td><label for="filter-prating">Professor Rating</label></td>
+                        <td><select id="filter-prating" name="filter-prating">
+                            <option value="any">Any</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select></td>
+                    </tr>
 
-            <tr>
-                <td><label for="filter-crating">Class Rating</label></td>
-                <td><select id="filter-crating" name="filter-crating">
-                    <option value="any">Any</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select></td>
-            </tr>
+                    <tr>
+                        <td><label for="filter-crating">Class Rating</label></td>
+                        <td><select id="filter-crating" name="filter-crating">
+                            <option value="any">Any</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select></td>
+                    </tr>
 
-            <tr>
-                <td></td>
-                <td><br><input type="submit"></td>
-            </tr>
+                    <tr>
+                        <td></td>
+                        <td><br><input type="submit"></td>
+                    </tr>
+                </table>
             </form>
-            </table>
         </div>
 
         <!-- Main Content -->
@@ -137,6 +138,7 @@
                         
                         <label for="add-semester"><b>Semester</b></label><br>
                         <select id="add-semester" name="add-semester" required>
+                            <option value="">None</option>
                             <option value="Spring 2022">Spring 2022</option>
                             <option value="Fall 2021">Fall 2021</option>
                             <option value="Spring 2021">Spring 2021</option>
@@ -145,6 +147,7 @@
                         
                         <label for="add-college"><b>College</b></label><br>
                         <select id="add-college" name="add-college" required>
+                            <option value="">None</option>
                             <option value="Natural Sciences">Natural Sciences</option>
                             <option value="Liberal Arts">Liberal Arts</option>
                             <option value="Engineering">Engineering</option>
@@ -194,8 +197,10 @@
             </div>
         </div>
     </div>
+
+    <footer>
+        Page Last Updated: 03/26/2022
+    </footer>
+
 </body>
-<footer>
-    Page Last Updated: 03/26/2022
-</footer>
 </html>

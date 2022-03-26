@@ -343,8 +343,28 @@ footer {
     text-align: center;
 }
 
+/* CONTACT PAGE END */
 
+/* LOGIN PAGE START */
 
+/* Login Section */
+.login-section {
+    background-color: #ffffff;
+    width: 40%;
+    padding: 0.5em;
+    margin-top: 2%;
+    margin-left: 2%;
+    border-radius: 1em;
+}
 
+.login-section h1 {
+	text-align: center;
+}
 
+.login-section h2 {
+	margin: 0;
+}
 
+.login-section .section {
+	margin: 1em;
+}
