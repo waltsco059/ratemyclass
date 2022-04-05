@@ -76,18 +76,19 @@
 
                 <h1>Don't have an account? Register here</h1>
                 
+                
                 <div class="section">
                     <h2>Enter a login and password:</h2>
                     <table>
                     
                         <tr>
                             <td>Username:</td>
-                            <td><input id="reg_user" name="reg_user" type="text" size="30"></td>
+                            <td><input id="reg_user"  onmouseover = "popwin('userPopup')" onmouseout = "closewin('userPopup')" name="reg_user" type="text" size="30"></td>
                         </tr>
                         
                         <tr>
                             <td>Password:</td>
-                            <td><input id="reg_pass" name="reg_pass" type="text" size="30"></td>
+                            <td><input id="reg_pass" onmouseover = "popwin('passwordPopup')" onmouseout = "closewin('passwordPopup')" name="reg_pass" type="text" size="30"></td>
                         </tr>
                         
                         <tr>
@@ -96,6 +97,26 @@
                         </tr>
                         
                     </table>
+                </div>
+                <!-- hidden login requirement popup -->
+                <div id="userPopup" class="centered" style="display: none"> 
+                    <h2>Requirements for a Username:</h2>
+                    <ul>
+                        <li>The username must be between 6 and 10 characters long, inclusive.</li>
+                        <li>The username must contain only letters and digits.</li>
+                        <li>The username cannot begin with a digit.</li>
+                      </ul> 
+                </div>
+                <div id="passwordPopup" class="centered" style="display: none"> 
+                    <h2>Requirements for a Password:</h2>
+                    <ul>
+                        <li>The password and the repeat password must match.</li>
+                        <li>The password must be between 6 and 10 characters long, inclusive.</li>
+                        <li>The password must contain only letters and digits.</li>
+                        <li>The password must have at least one lower case letter.</li>
+                        <li>The password must have at least one upper case letter.</li>
+                        <li>The password must have at least one digit.</li>
+                      </ul> 
                 </div>
                 
                 <div class="section">

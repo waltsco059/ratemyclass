@@ -368,3 +368,19 @@ footer {
 .login-section .section {
 	margin: 1em;
 }
+
+/* for things we want in the center of our screen*/
+.centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
+    background-color: #ffffff;
+    border-width: 5px;
+    border-color: #bf5700;
+    border-style: solid;
+    
+    padding: 0.5em;
+    border-radius: 1em;
+  }
