@@ -5,7 +5,10 @@
     <meta name="description" content="Final Project">
     <meta name="author" content="Group">
     <title>Rate My Class</title>
-    <link href="style.css" rel="stylesheet"> 
+    <link href="style.css" rel="stylesheet">
+    <script src="scripts/class_form.js" async></script>
+    <script src="scripts/class_add.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body id="homepage">
     <!-- Container/Background -->
@@ -16,7 +19,7 @@
 
             <!-- Navbar Logo -->
             <div class="nav-logo">
-                <h1> Rate My Class </h1>
+                <a href="index.html"><h1>Rate My Class</h1></a>
                 <a href="index.html"><img src="img/logo.svg" alt="bepo"></a>
             </div>
             
@@ -35,7 +38,7 @@
                 <a href="account/account.html"> Account </a>
                 <a href="campus/campus.html"> Campus </a>
                 <a href="contact/contact.html"> Contact </a>
-                <a href="#"> Sign In </a> 
+                <a href="login/login.html"> Sign In </a> 
             </div>
         </div>
 
@@ -43,216 +46,122 @@
         <div id="filter-section">
             <h1>Class Filter</h1>
             <form action="#">
-                <label for="filter-college">College</label>
-                <select id="filter-college" name="filter-college">
-                    <option value="any">Any</option>
-                    <option value="cns">Natural Sciences</option>
-                    <option value="cola">Liberal Arts</option>
-                    <option value="engi">Engigneering</option>
-                    <option value="busi">Business</option>
-                </select>
-                <br>
-                <label for="filter-semester">Semester</label>
-                <select id="filter-semester" name="filter-semester">
-                    <option value="any">Any</option>
-                    <option value="s22">Spring 2022</option>
-                    <option value="f21">Fall 2021</option>
-                    <option value="sp21">Spring 2021</option>
-                    <option value="fa20">Fall 2020</option>
-                </select>
-                <br>
-                <label for="filter-difficulty">Difficulty</label>
-                <select id="filter-difficulty" name="filter-difficulty">
-                    <option value="any">Any</option>
-                    <option value="not">Not Difficult</option>
-                    <option value="easy">Easy</option>
-                    <option value="medium">Medium</option>
-                    <option value="difficult">Difficult</option>
-                    <option value="very">Very Difficult</option>
-                </select>
-                <br>
-                <label for="filter-prating">Professor Rating</label>
-                <select id="filter-prating" name="filter-prating">
-                    <option value="any">Any</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select><br>
-                <label for="filter-crating">Class Rating</label>
-                <select id="filter-crating" name="filter-crating">
-                    <option value="any">Any</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select><br>
-                <input type="submit">
+                <table>
+                    <tr>
+                        <td><label for="filter-college">College</label></td>
+                        <td><select id="filter-college" name="filter-college">
+                            <option value="any">Any</option>
+                            <option value="cns">Natural Sciences</option>
+                            <option value="cola">Liberal Arts</option>
+                            <option value="engi">Engineering</option>
+                            <option value="busi">Business</option>
+                        </select></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="filter-semester">Semester</label></td>
+                        <td><select id="filter-semester" name="filter-semester">
+                            <option value="any">Any</option>
+                            <option value="s22">Spring 2022</option>
+                            <option value="f21">Fall 2021</option>
+                            <option value="sp21">Spring 2021</option>
+                            <option value="fa20">Fall 2020</option>
+                        </select></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="filter-difficulty">Difficulty</label></td>
+                        <td><select id="filter-difficulty" name="filter-difficulty">
+                            <option value="any">Any</option>
+                            <option value="not">Not Difficult</option>
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="difficult">Difficult</option>
+                            <option value="very">Very Difficult</option>
+                        </select></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="filter-prating">Professor Rating</label></td>
+                        <td><select id="filter-prating" name="filter-prating">
+                            <option value="any">Any</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select></td>
+                    </tr>
+
+                    <tr>
+                        <td><label for="filter-crating">Class Rating</label></td>
+                        <td><select id="filter-crating" name="filter-crating">
+                            <option value="any">Any</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select></td>
+                    </tr>
+
+                    <tr>
+                        <td></td>
+                        <td><br><input type="submit"></td>
+                    </tr>
+                </table>
             </form>
         </div>
 
         <!-- Main Content -->
         <div id="content">
-
-            <!-- Main Content Piece -->
-            <div class="content-piece">
-                <div class="info">
-                    <h1>Info</h1>
-                    <table>
-                        <tr>
-                            <td>Class:</td>
-                            <td>Elements of Web Development</td>
-                        </tr>
-                        <tr>
-                            <td>Name:</td>
-                            <td>William Bulko</td>
-                        </tr>
-                        <tr>
-                            <td>Semester:</td>
-                            <td>Spring 2022</td>
-                        </tr>
-                        <tr>
-                            <td>College:</td>
-                            <td>Natural Science</td>
-                        </tr>                        
-                    </table>
-                </div>
-                
-                <!-- Main Content Piece Class Rating -->
-                <div class="class-rating">
-                    <h1>Class Rating:</h1>
-                    <p>5</p>
-                </div>
-
-                <!-- Main Content Piece Professor Rating -->
-                <div class="pofessor-rating">
-                    <h1>Professor Rating:</h1>
-                    <p>5</p>
-                </div>
-                
-                <!-- Main Content Piece Rate Button -->
-                <div class="rate-button">
-                    <a href="#">Rate this Class!</a>
-                </div>
+            <!-- Main Content Header -->
+            <div class="content-header">
+                <p>
+                Welcome to Rate My Class, a site that focuses on rating individual classes at UT Austin. If you cannot find a class by using the navigation bar
+                above or the filter to the left, then feel free to add a class by clicking the button below. To rate a class, you will be required to login.
+                </p>
+            </div>
+            
+            <!-- Add Class -->
+            <div class="add-class">
+                <button class="open-button" onclick="openForm()">Add Class</button>
+                <div class="form-popup" id="addClass">
+                    <form id ="addClassForm" class="form-container">
+                        <h1>Add Class Info</h1>
+                    
+                        <label for="add-class"><b>Class</b></label>
+                        <input id="add-class" type="text" placeholder="Elements of Web Development" name="add-class" required>
+                    
+                        <label for="add-professor"><b>Professor</b></label>
+                        <input id ="add-professor" type="text" placeholder="William Bulko" name="add-professor" required>
+                        
+                        <label for="add-semester"><b>Semester</b></label><br>
+                        <select id="add-semester" name="add-semester" required>
+                            <option value="">None</option>
+                            <option value="Spring 2022">Spring 2022</option>
+                            <option value="Fall 2021">Fall 2021</option>
+                            <option value="Spring 2021">Spring 2021</option>
+                            <option value="Fall 2020">Fall 2020</option>
+                        </select><br><br>
+                        
+                        <label for="add-college"><b>College</b></label><br>
+                        <select id="add-college" name="add-college" required>
+                            <option value="">None</option>
+                            <option value="Natural Sciences">Natural Sciences</option>
+                            <option value="Liberal Arts">Liberal Arts</option>
+                            <option value="Engineering">Engineering</option>
+                            <option value="Business">Business</option>
+                        </select><br><br>
+                    
+                        <button type="submit" class="btn">Submit</button>
+                        <button type="button" class="btn cancel" onclick="closeForm()">Cancel</button>
+                    </form>
+                  </div>
             </div>
 
-            <div class="content-piece">
-                <div class="info">
-                    <h1>Info</h1>
-                    <table>
-                        <tr>
-                            <td>Class:</td>
-                            <td>Elements of Data Visualization</td>
-                        </tr>
-                        <tr>
-                            <td>Name:</td>
-                            <td>Anna Chaney</td>
-                        </tr>
-                        <tr>
-                            <td>Semester:</td>
-                            <td>Spring 2022</td>
-                        </tr>
-                        <tr>
-                            <td>College:</td>
-                            <td>Natural Science</td>
-                        </tr>                        
-                    </table>
-                </div>
+            <!-- Main Content Additions -->
 
-                <div class="class-rating">
-                    <h1>Class Rating:</h1>
-                    <p>5</p>
-                </div>
-                <div class="professor-rating">
-                    <h1>Professor Rating:</h1>
-                    <p>4.9</p>
-                </div>
-                <div class="rate-button">
-                    <a href="#">Rate this Class!</a>
-                </div>
-            </div>
-
-            <div class="content-piece">
-                <div class="info">
-                    <h1>Info</h1>
-                    <table>
-                        <tr>
-                            <td>Class:</td>
-                            <td>Advanced GIS</td>
-                        </tr>
-                        <tr>
-                            <td>Name:</td>
-                            <td>Eugenio Arima</td>
-                        </tr>
-                        <tr>
-                            <td>Semester:</td>
-                            <td>Spring 2022</td>
-                        </tr>
-                        <tr>
-                            <td>College:</td>
-                            <td>Liberal Arts</td>
-                        </tr>                       
-                    </table>
-                </div>
-
-                <div class="class-rating">
-                    <h1>Class Rating:</h1>
-                    <p>4.8</p>
-                </div>
-                <div class="professor-rating">
-                    <h1>Professor Rating:</h1>
-                    <p>4.9</p>
-                </div>
-                <div class="rate-button">
-                    <a href="#">Rate this Class!</a>
-                </div>
-            </div>
-
-            <div class="content-piece">
-                <div class="info">
-                    <h1>Info</h1>
-                    <table>
-                        <tr>
-                            <td>Class:</td>
-                            <td>Elements of Web Development</td>
-                        </tr>
-                        <tr>
-                            <td>Name:</td>
-                            <td>William Bulko</td>
-                        </tr>
-                        <tr>
-                            <td>Semester:</td>
-                            <td>Spring 2021</td>
-                        </tr>
-                        <tr>
-                            <td>College:</td>
-                            <td>Natural Science</td>
-                        </tr>
-                    </table>
-                </div>
-
-                <div class="class-rating">
-                    <h1>Class Rating:</h1>
-                    <p>4.9</p>
-                </div>
-                <div class="professor-rating">
-                    <h1>Professor Rating:</h1>
-                    <p>5</p>
-                </div>
-                <div class="rate-button">
-                    <a href="#">Rate this Class!</a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Description-->
-        <div id="description">
-            <h1>What is Rate My Class?</h1>
-            <p>Rate my class is a rating platform specialized to the classes you will take. Professors teaching styles vary depending on the class and Rate my class makes it easy
-                to compare professors to the class you want to. You will get reviews that for the class and professor so you can get a more accurate rating of that class.
-            </p>
         </div>
 
         <!-- News -->
@@ -261,35 +170,37 @@
 
             <!-- News Piece -->
             <div class="news-piece">
-                <a href="#">
+                <a href="https://news.utexas.edu/2022/03/21/high-gas-prices-might-be-here-for-a-while-but-we-have-a-way-out/">
                     <figure>
-                        <img src="img/news.png" alt="Trulli" style="width:100%">
-                        <figcaption>Caption</figcaption>
+                        <img src="img/gas.jpg" alt="gas" style="width:100%">
+                        <figcaption>High Gas Prices May Stay for a While</figcaption>
                     </figure>
                 </a>
             </div>
 
             <div class="news-piece">
-                <a href="#">
+                <a href="https://diversity.utexas.edu/2022/02/01/preserving-austins-black-history/">
                     <figure>
-                        <img src="img/news.png" alt="Trulli" style="width:100%">
-                        <figcaption>Caption</figcaption>
+                        <img src="img/steph.png" alt="steph" style="width:100%">
+                        <figcaption>Q&A with Stephanie Lang</figcaption>
                     </figure>
                 </a>
             </div>
 
             <div class="news-piece">
-                <a href="#">
+                <a href="https://news.utexas.edu/2021/12/02/first-digital-platform-to-track-and-prevent-drug-overdoses-in-texas-launches/">
                     <figure>
-                        <img src="img/news.png" alt="Trulli" style="width:100%">
-                        <figcaption>Caption</figcaption>
+                        <img src="img/texas.png" alt="texas" style="width:100%">
+                        <figcaption>Tracking & Preventing Overdoses in Texas</figcaption>
                     </figure>
                 </a>
             </div>
         </div>
     </div>
+
+    <footer>
+        Page Last Updated: 03/26/2022
+    </footer>
+
 </body>
-<footer>
-    Page Last Updated: 03/04/2022
-</footer>
 </html>
