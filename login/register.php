@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Final Project">
@@ -8,6 +9,7 @@
     <link href="../style.css" rel="stylesheet">
     <script src="../scripts/register.js"></script>
 </head>
+
 <body>
     <!-- Container/Background -->
     <div id="container">
@@ -174,7 +176,6 @@ print <<<REGISTER
                         
                 <div class="section">
                     <input type="submit" value="Register">
-                    <input type="reset" value="Clear">
                 </div>
 
             </div>

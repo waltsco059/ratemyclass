@@ -7,8 +7,6 @@
     <meta name="author" content="Group">
     <title>Sign In</title>
     <link href="../style.css" rel="stylesheet">
-    <script src="../scripts/login.js"></script>
-    <script src="../scripts/register.js"></script>
 </head>
 
 <body>
@@ -43,6 +41,45 @@
             </div>
         </div>
 
+<?php
+    $user = "";
+    $pass = "";
+    $valid = false;
+    $cookie_cleared = false;
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        # clear cookie
+        if (isset($_COOKIE["logged_in"])) {
+            setcookie("logged_in", "", time()-3600, "/");
+            $cookie_cleared = true;
+        }
+        # loggin validation
+        else {
+            $user = $_POST["user"];
+            $pass = $_POST["pass"];
+            # check file for valid username and password
+            if (file_exists("passwd.txt")) {
+                $file = fopen("passwd.txt", "r");
+                while (!feof($file)) {
+                    $line = explode(":", trim(fgets($file)));
+                    $file_user = $line[0];
+                    if ($file_user == "") {
+                        break;
+                    }
+                    $file_pass = $line[1];
+                    if ($user == $file_user && $pass == $file_pass) {
+                        setcookie("logged_in", "$user:$pass", time()+3600, "/");
+                        $valid = true;
+                        break;
+                    }
+                }
+            }
+            if (!$valid) {
+                print "<script>alert(\"Username or password invalid.\")</script>\n\n";
+            }
+        }
+    }
+    if ((!isset($_COOKIE["logged_in"]) && !$valid) || $cookie_cleared) {
+        print <<<LOGIN
         <form method="POST">
             <div class="login-section">
 
@@ -54,26 +91,41 @@
 
                         <tr>
                             <td>Username:</td>
-                            <td><input id="log_user" name="log_user" type="text" size="30"></td>
+                            <td><input name="user" type="text" size="30" value="$user" required></td>
                         </tr>
                         
                         <tr>
                             <td>Password:</td>
-                            <td><input id="log_pass" name="log_pass" type="text" size="30"></td>
+                            <td><input name="pass" type="text" size="30" value="$pass" required></td>
                         </tr>
                         
                     </table>
                 </div>
                 
                 <div class="section">
-                    <input type="button" value="Login" onclick="login()">
-                    <input type="reset" value="Clear">
+                    <input type="submit" value="Login">
                 </div>
 
                 <div class="section"><h3>Don't have an account? <a href="register.php">Register here</a></h3></div>
 
             </div>
         </form>
+
+LOGIN;
+    }
+    else {
+        print <<<PAGE
+        <form method="POST">
+            <div class="login-section">
+                <h3>You are currently signed in.</h3>
+                <p>Would you like to sign out?</p>
+                <input type="submit" value="Yes">
+            </div>
+        </form>
+
+PAGE;
+   }
+?>
         
     </div>
 </body>
