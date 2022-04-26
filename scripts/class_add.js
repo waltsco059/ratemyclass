@@ -44,7 +44,7 @@ htmlBlock = `<div class="content-piece">
     
     <!-- Main Content Piece Rate Button -->
     <div class="rate-button">
-        <a href="#">Rate this Class!</a>
+    <a href="scripts/class_rate.php?cname=${cname}&professor=${professor}&semester=${semester}&college=${college}">Rate this Class!</a>
     </div>
 </div>`
 
