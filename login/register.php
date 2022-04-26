@@ -47,7 +47,7 @@
     $pass = "";
     $pass2 = "";
     $register = true;
-    # process registration
+    # Process Registration: Users who attempt registration are posted here
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user = $_POST["user"];
         $pass = $_POST["pass"];
@@ -99,30 +99,30 @@
         }
 
         if ($valid) {
-            # if password file does not exist, create it
-            if (!file_exists("passwd.txt")) {
-                $file = fopen("passwd.txt", "w");
-                fclose ($file);
+            #validate registration --------------------------------------------------------------------
+            # Search for username:password pair in database
+            $dbUser = "cs329e_bulko_kevingon";
+            $database = "spring-2022.cs.utexas.edu";
+            $dbPassword = "trout+Any+shout";
+            $dbName = "cs329e_bulko_kevingon";
+
+            $mysqli = new mysqli ($database, $dbUser, $dbPassword, $dbName);
+            $command = "SELECT * FROM users WHERE (username, password) = ('$user', '$pass');";
+            $result = $mysqli->query($command);
+
+            # If the result is not empty, then registration invalid
+            if(!($result->num_rows === 0))
+            {
+                $valid = false;
+                print "\t<script>alert(\"One of two credentials already in use.\")</script>\n\n";
             }
-            # check file for valid username
-            $file = fopen("passwd.txt", "r");
-            while (!feof($file)) {
-                $file_user = explode(":", trim(fgets($file)))[0];
-                if ($user == $file_user) {
-                    $valid = false;
-                    print "\t<script>alert(\"That username is already in use.\")</script>\n\n";
-                    break;
-                }
-            }
-            fclose ($file);
-            # if username is valid, add it to file
+            # if registration unused, add to database and proceed to success screen
             if ($valid) {
-                $file = fopen("passwd.txt", "a");
-                fwrite($file, "$user:$pass\n");
-                fclose ($file);
+                $command = "INSERT INTO users VALUES ('$user', '$pass');";
+                $result = $mysqli->query($command);
                 $register = false;
             }
-        }
+        }#------------------------------------------------------------------------------------------------
     }
     # print registation form
     if ($register) {

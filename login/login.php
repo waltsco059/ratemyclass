@@ -46,39 +46,48 @@
     $pass = "";
     $valid = false;
     $cookie_cleared = false;
+
+    # Only users who are trying to login or logout post to this script
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        # clear cookie
+        
+        # Logged in users are given an option to sign out.
+        # Clicking that option posts to this page, so we clear their cookie.
         if (isset($_COOKIE["logged_in"])) {
             setcookie("logged_in", "", time()-3600, "/");
             $cookie_cleared = true;
         }
-        # loggin validation
+        # Otherwise, we attempt login validation
         else {
             $user = $_POST["user"];
             $pass = $_POST["pass"];
-            # check file for valid username and password
-            if (file_exists("passwd.txt")) {
-                $file = fopen("passwd.txt", "r");
-                while (!feof($file)) {
-                    $line = explode(":", trim(fgets($file)));
-                    $file_user = $line[0];
-                    if ($file_user == "") {
-                        break;
-                    }
-                    $file_pass = $line[1];
-                    if ($user == $file_user && $pass == $file_pass) {
-                        setcookie("logged_in", "$user:$pass", time()+3600, "/");
-                        $valid = true;
-                        break;
-                    }
-                }
+            # check mysqli database for valid username and password -------------------------------
+            $dbUser = "cs329e_bulko_kevingon";
+            $database = "spring-2022.cs.utexas.edu";
+            $dbPassword = "trout+Any+shout";
+            $dbName = "cs329e_bulko_kevingon";
+
+            $mysqli = new mysqli ($database, $dbUser, $dbPassword, $dbName);
+            // check if user:pass pair is in the database
+            $command = "SELECT * FROM users WHERE (username, password) = ('$user', '$pass');";
+        
+            // Issue the query
+            $result = $mysqli->query($command);
+
+            # If the result is not empty, then set cookie
+            if(!($result->num_rows === 0))
+            {
+                setcookie("logged_in", "$user:$pass", time()+3600, "/");
+                $valid = true;
             }
+
+            #---------------------------------------------------------------------------
             if (!$valid) {
                 print "<script>alert(\"Username or password invalid.\")</script>\n\n";
             }
         }
     }
-    if ((!isset($_COOKIE["logged_in"]) && !$valid) || $cookie_cleared) {
+    # Present login screen to invalid logins, new users, or those who have chosen to log out
+    if ((!isset($_COOKIE["logged_in"]) && !$valid) || $cookie_cleared) { 
         print <<<LOGIN
         <form method="POST">
             <div class="login-section">
