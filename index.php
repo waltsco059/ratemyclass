@@ -8,6 +8,7 @@
     <link href="style.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="scripts/class_form.js" defer></script>
+    <script src="scripts/class_load.js" defer></script>
 </head>
 <body id="homepage">
     <!-- Container/Background -->
@@ -18,8 +19,8 @@
 
             <!-- Navbar Logo -->
             <div class="nav-logo">
-                <a href="index.html"><h1>Rate My Class</h1></a>
-                <a href="index.html"><img src="img/logo.svg" alt="bepo"></a>
+                <a href="index.php"><h1>Rate My Class</h1></a>
+                <a href="index.php"><img src="img/logo.svg" alt="bepo"></a>
             </div>
             
             <!-- Navbar Search -->
@@ -104,7 +105,7 @@
 
                     <tr>
                         <td></td>
-			<td><input type="button" value = "Filter"></td>
+			<td><input type="submit" value = "Filter"></td>
                     </tr>
                 </table>
             </form>

@@ -19,8 +19,8 @@
 
             <!-- Navbar Logo -->
             <div class="nav-logo">
-                <a href="../index.html"><h1>Rate My Class</h1></a>
-                <a href="../index.html"><img src="../img/logo.svg" alt="bepo"></a>
+                <a href="../index.php"><h1>Rate My Class</h1></a>
+                <a href="../index.php"><img src="../img/logo.svg" alt="bepo"></a>
             </div>
             
             <!-- Navbar Search -->
@@ -47,7 +47,7 @@
     $pass = "";
     $pass2 = "";
     $register = true;
-    # Process Registration: Users who attempt registration are posted here
+    # process registration
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user = $_POST["user"];
         $pass = $_POST["pass"];
@@ -117,13 +117,24 @@
                 $valid = false;
                 print "\t<script>alert(\"One of two credentials already in use.\")</script>\n\n";
             }
-            # if registration unused, add to database and proceed to success screen
+            # check file for valid username
+            $file = fopen("passwd.txt", "r");
+            while (!feof($file)) {
+                $file_user = explode(":", trim(fgets($file)))[0];
+                if ($user == $file_user) {
+                    $valid = false;
+                    print "\t<script>alert(\"That username is already in use.\")</script>\n\n";
+                    break;
+                }
+            }
+            fclose ($file);
+            # if username is valid, add it to file
             if ($valid) {
                 $command = "INSERT INTO users (username, password) VALUES ('$user', '$pass');";
                 $result = $mysqli->query($command);
                 $register = false;
             }
-        }#------------------------------------------------------------------------------------------------
+        }
     }
     # print registation form
     if ($register) {
