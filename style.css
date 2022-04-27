@@ -474,3 +474,92 @@ div#success {
     border-radius: 1em;
 }
 
+/* CAMPUS PAGE START */
+#map {
+    float: right;
+    background-color: #ffffff;
+    width: 40%;
+    height: 80%;
+    margin-right: 5%;
+    margin-top: 2%;
+    border-radius: 1em;
+}
+
+#img_map {
+    float: left;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+    border-radius: 1em;
+    border: 2px solid black;
+}
+
+#campus_links {
+    background-color: #ffffff;
+    float: left;
+    width: 40%;
+    height: 40%;
+    margin-top: 2%;
+    border-radius: 1em;
+}
+
+#myut {
+    float: left;
+    margin-top: 5%;
+}
+
+#canvas {
+    float: left;
+    margin-top: 2%;
+    margin-left: 6%;
+}
+
+#healthy_horns {
+    float: left;
+    margin-top: 4%;
+    margin-left: 7%;
+}
+
+.logo_text {
+    margin-left: 35%;
+    padding-right: 4%;
+}
+
+.campus_subtitle {
+    margin-left: 35%;
+    font-size: 15pt;
+    font-weight: bold;
+}
+
+#sub_canvas {
+    margin-left: 15%;
+}
+
+#health {
+    margin-left: 30%;
+}
+
+#sub_health {
+    margin-left: 12.5%;
+}
+
+#campus_news {
+    background-color: #ffffff;
+    float: left;
+    width: 40%;
+    height: 40%;
+    margin-top: 2%;
+    margin-left: 5.5%;
+    border-radius: 1em;
+}
+
+#ut_video {
+    margin-top: 1%;
+    margin-left: 4.5%;
+}
+
+#coming_soon {
+    text-align: center;
+    font-size: 20pt;
+}
+
