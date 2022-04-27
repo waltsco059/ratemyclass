@@ -18,8 +18,8 @@
 
             <!-- Navbar Logo -->
             <div class="nav-logo">
-                <a href="../index.html"><h1>Rate My Class</h1></a>
-                <a href="../index.html"><img src="../img/logo.svg" alt="bepo"></a>
+                <a href="../index.php"><h1>Rate My Class</h1></a>
+                <a href="../index.php"><img src="../img/logo.svg" alt="bepo"></a>
             </div>
             
             <!-- Navbar Search -->
@@ -105,7 +105,7 @@
                         
                         <tr>
                             <td>Password:</td>
-                            <td><input name="pass" type="text" size="30" value="$pass" required></td>
+                            <td><input name="pass" type="password" size="30" value="$pass" required></td>
                         </tr>
                         
                     </table>

@@ -107,6 +107,7 @@
             $dbName = "cs329e_bulko_kevingon";
 
             $mysqli = new mysqli ($database, $dbUser, $dbPassword, $dbName);
+
             $command = "SELECT * FROM users WHERE (username, password) = ('$user', '$pass');";
             $result = $mysqli->query($command);
 
@@ -118,7 +119,7 @@
             }
             # if registration unused, add to database and proceed to success screen
             if ($valid) {
-                $command = "INSERT INTO users VALUES ('$user', '$pass');";
+                $command = "INSERT INTO users (username, password) VALUES ('$user', '$pass');";
                 $result = $mysqli->query($command);
                 $register = false;
             }
@@ -143,7 +144,7 @@ print <<<REGISTER
                                 
                         <tr>
                             <td>Password:</td>
-                            <td><input onmouseover = "popwin('passwordPopup')" onmouseout = "closewin('passwordPopup')" name="pass" type="text" size="30" value="$pass" required></td>
+                            <td><input onmouseover = "popwin('passwordPopup')" onmouseout = "closewin('passwordPopup')" name="pass" type="password" size="30" value="$pass" required></td>
                         </tr>
                                 
                         <tr>
