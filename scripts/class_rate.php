@@ -5,6 +5,9 @@ $cname = $_GET["cname"];
 $professor = $_GET["professor"];
 $semester = $_GET["semester"];
 $college = $_GET["college"];
+$crating = $_GET["crating"];
+$prating = $_GET["prating"];
+$difficulty = $_GET["difficulty"];
 
 # write dynamic rating page
 
@@ -26,8 +29,8 @@ echo <<<RATING
 
             <!-- Navbar Logo -->
             <div class="nav-logo">
-                <a href="../index.html"><h1>Rate My Class</h1></a>
-                <a href="../index.html"><img src="../img/logo.svg" alt="bepo"></a>
+                <a href="../index.php"><h1>Rate My Class</h1></a>
+                <a href="../index.php"><img src="../img/logo.svg" alt="bepo"></a>
             </div>
             
             <!-- Navbar Search -->
@@ -77,7 +80,7 @@ echo <<<RATING
                 <table>
                     <tr>
                         <td>Class Rating:</td>
-                        <td>crating</td>
+                        <td>${crating}</td>
                     </tr>
                 </table>
             </div>
@@ -87,7 +90,7 @@ echo <<<RATING
                 <table>
                     <tr>
                         <td>Professor Rating:</td>
-                        <td>prating</td>
+                        <td>${prating}</td>
                 </table>
             </div>
 
@@ -119,10 +122,20 @@ echo <<<RATING
                                 <option value="5">5</option>
                             </select></td>
                         </tr>
+			
+			<tr>
+                            <td><br><label for="user-difficulty">What was the difficulty level of this class?</label></td>
+                            <td><br><select id="user-difficulty" name="user-difficulty" required>
+                                <option value="">Select</option>
+                                <option value="1">Easy</option>
+                                <option value="2">Medium</option>
+                                <option value="3">Hard</option>
+                            </select></td>
+                        </tr>
 
                         <tr>
                             <td><br><input type="reset"></td>
-                            <td><br><input type="submit"></td>
+                            <td><br><input type="submit" value="Rate"></td>
                         </tr>
                     </table>
                 </form>
