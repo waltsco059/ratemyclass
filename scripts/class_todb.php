@@ -28,7 +28,7 @@ $semester = $semester_list["$semester_db"];
 $college = $college_list["$college_db"];
 
 // Create the query as a string
-$command = "INSERT INTO class (cname, pname, semester, college, prating, crating, difficulty) VALUES ('$class', '$professor', '$semester_db', '$college_db', 1, 1, 1)";
+$command = "INSERT INTO class (cname, pname, semester, college, prating, crating, difficulty) VALUES ('$class', '$professor', '$semester_db', '$college_db', 0, 0, 0)";
 
 // Issue the query
 $result = $mysqli->query($command);

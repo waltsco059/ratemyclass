@@ -33,18 +33,9 @@ echo <<<RATING
                 <a href="../index.php"><img src="../img/logo.svg" alt="bepo"></a>
             </div>
             
-            <!-- Navbar Search -->
-            <div class="nav-search">
-                <form action="#">
-                    <input type="search"
-                        placeholder="Search Courses"
-                        name="home-search">
-                </form>
-            </div>
-
+            
             <!-- Navbar Links -->
             <div class="nav-link">
-                <img src="../img/pfp.png" alt="pfp"> 
                 <a href="../account/account.html"> Account </a>
                 <a href="../campus/campus.html"> Campus </a>
                 <a href="../contact/contact.html"> Contact </a>
@@ -79,7 +70,9 @@ echo <<<RATING
             <div class="class-rating">
                 <table>
                     <tr>
-                        <td>Class Rating:</td>
+                        <td>Class:</td>
+			<td></td>
+			<td></td>
                         <td>${crating}</td>
                     </tr>
                 </table>
@@ -89,15 +82,29 @@ echo <<<RATING
             <div class="professor-rating">
                 <table>
                     <tr>
-                        <td>Professor Rating:</td>
+                        <td>Professor:</td>
+			<td></td>
+			<td></td>
                         <td>${prating}</td>
                 </table>
             </div>
 
+	    <!-- Professor Rating -->
+            <div class="difficulty-rating">
+                <table>
+                    <tr>
+                        <td>Difficulty:</td>
+			<td></td>
+			<td></td>
+                        <td>${difficulty}</td>
+                </table>
+            </div>
+
+
             <hr>
 
             <div class="rating-form">
-                <form method='POST'>
+                <form action='rating_todb.php?cname=${cname}&pname=${professor}&semester=${semester}&college=${college}' method='POST'>
                     <table>
                         <tr>
                             <td><label for="user-crating">How would you rate ${cname}?</label></td>

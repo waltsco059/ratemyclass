@@ -22,19 +22,9 @@
                 <a href="../index.php"><h1>Rate My Class</h1></a>
                 <a href="../index.php"><img src="../img/logo.svg" alt="bepo"></a>
             </div>
-            
-            <!-- Navbar Search -->
-            <div class="nav-search">
-                <form action="#">
-                    <input type="search"
-                        placeholder="Search Courses"
-                        name="home-search">
-                </form>
-            </div>
 
             <!-- Navbar Links -->
             <div class="nav-link">
-                <img src="../img/pfp.png" alt="pfp"> 
                 <a href="../account/account.html"> Account </a>
                 <a href="../campus/campus.html"> Campus </a>
                 <a href="../contact/contact.html"> Contact </a>
@@ -43,6 +33,10 @@
         </div>
 
 <?php
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+
     $user = "";
     $pass = "";
     $pass2 = "";
@@ -101,37 +95,22 @@
         if ($valid) {
             #validate registration --------------------------------------------------------------------
             # Search for username:password pair in database
-            $dbUser = "cs329e_bulko_kevingon";
-            $database = "spring-2022.cs.utexas.edu";
-            $dbPassword = "trout+Any+shout";
-            $dbName = "cs329e_bulko_kevingon";
+            include ('../scripts/db_connect.php');
 
-            $mysqli = new mysqli ($database, $dbUser, $dbPassword, $dbName);
-
-            $command = "SELECT * FROM users WHERE (username, password) = ('$user', '$pass');";
+            $command = "SELECT * FROM users WHERE username = '$user' AND password = '$pass'";
             $result = $mysqli->query($command);
 
             # If the result is not empty, then registration invalid
-            if(!($result->num_rows === 0))
+            if(($row = $result->fetch_array()))
             {
                 $valid = false;
                 print "\t<script>alert(\"One of two credentials already in use.\")</script>\n\n";
             }
-            # check file for valid username
-            $file = fopen("passwd.txt", "r");
-            while (!feof($file)) {
-                $file_user = explode(":", trim(fgets($file)))[0];
-                if ($user == $file_user) {
-                    $valid = false;
-                    print "\t<script>alert(\"That username is already in use.\")</script>\n\n";
-                    break;
-                }
-            }
-            fclose ($file);
             # if username is valid, add it to file
             if ($valid) {
                 $command = "INSERT INTO users (username, password) VALUES ('$user', '$pass');";
                 $result = $mysqli->query($command);
+		$mysqli->close();
                 $register = false;
             }
         }
@@ -199,7 +178,7 @@ REGISTER;
         print <<<SUCCESS
     <div class="login-section">
         <h3>Your registration was successful!</h3>
-        <a href="../index.html">Back to homepage</a>
+        <a href="../index.php">Back to homepage</a>
     </div>
 
 SUCCESS;

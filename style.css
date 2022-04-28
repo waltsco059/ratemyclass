@@ -44,7 +44,7 @@ body {
 #navbar .nav-search {
     float: left;
     margin-top: 1.5%;
-    margin-left: 20%;
+    margin-left: 17%;
 }
 
 .nav-search input {
@@ -327,7 +327,7 @@ div#success {
 #news-section {
     float: left;
     background-color: #ffffff;
-    width: 15%;
+    width: 20%;
     height: 80%;
     margin-top: 2%;
     border-radius: 1em;
@@ -438,17 +438,29 @@ div#success {
 	clear: both;
 }
 
-#rate-background .class-rating table {
+.class-rating table {
+	font-size: 2em;
+	float: left;
+	margin-top: 2%;
+	margin-left: 2%;
+}
+
+.professor-rating table {
+	font-size: 2em;
+	float: left;
+	margin-top: 2%;
+	margin-left: 13%;
+	margin-right: 13%;
+
+
+}
+
+.difficulty-rating table {
 	font-size: 2em;
 	float: left;
 	margin-top: 2%;
 }
 
-#rate-background .professor-rating table {
-	font-size: 2em;
-	float: right;
-	margin-top: 2%;
-}
 
 #rate-background .rating-form {
 	margin-top: 5%;
@@ -475,34 +487,47 @@ div#success {
 }
 
 /* CAMPUS PAGE START */
-#map {
-    float: right;
-    background-color: #ffffff;
-    width: 40%;
-    height: 80%;
-    margin-right: 5%;
-    margin-top: 2%;
-    border-radius: 1em;
-}
-
-#img_map {
-    float: left;
-    margin-left: 5%;
-    margin-right: 5%;
-    margin-top: 5%;
-    border-radius: 1em;
-    border: 2px solid black;
-}
 
 #campus_links {
-    background-color: #ffffff;
     float: left;
-    width: 40%;
+    background-color: white;
+    border-radius: 2%;
+    margin-top: 1%;
+    margin-left: 5%;
     height: 40%;
-    margin-top: 2%;
-    border-radius: 1em;
+    width: 40%;
 }
 
+#campus_news {
+    float: left;
+    clear: left;
+    background-color: #333f48;
+    border-radius: 2%;
+    margin-top: 2%;
+    margin-left: 5%;
+    height: 42%;
+    width: 40%;
+}
+
+#loader {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    margin-top: 25%;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+#map-container {
+    float: right;
+    margin-top: 1%;
+    margin-right: 2%;
+    height: 84%;
+    width: 50%;
+}
 #myut {
     float: left;
     margin-top: 5%;
@@ -543,19 +568,10 @@ div#success {
     margin-left: 12.5%;
 }
 
-#campus_news {
-    background-color: #ffffff;
-    float: left;
-    width: 40%;
-    height: 40%;
-    margin-top: 2%;
-    margin-left: 5.5%;
-    border-radius: 1em;
-}
-
 #ut_video {
-    margin-top: 1%;
-    margin-left: 4.5%;
+    width: 100%;
+    height: 100%;
+    border-radius: 2%;
 }
 
 #coming_soon {

@@ -2,17 +2,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Optionally store the parameters in variables
-$server = "spring-2022.cs.utexas.edu";
-$user = "cs329e_bulko_waltsco";
-$pwd = "Sheer6roman5dull";
-$dbName = "cs329e_bulko_waltsco";
-$mysqli = new mysqli ($server,$user,$pwd,$dbName);
-// If it returns a non-zero error number, print a
-// message and stop execution immediately
-if ($mysqli->connect_errno) {
-    die('Connect Error: ' . $mysqli->connect_errno . ": " . $mysqli->connect_error);
-}
+include ('db_connect.php');
 
 $college_list = array(
     "ns" => "Natural Sciences",
@@ -28,6 +18,13 @@ $semester_list = array(
     "f20" => "Fall 2020"
 );
 
+$difficulty_list = array(
+    0 => "N/A",
+    1 => "Easy",
+    2 => "Medium",
+    3 => "Hard"
+);
+
 $command = "SELECT * FROM class";
 $results = $mysqli->query($command);
 
@@ -38,10 +35,12 @@ while($row = $results->fetch_assoc()){
 	$college_db = $row['college'];
 	$crating = $row['crating'];
 	$prating =  $row['prating'];
-	$difficulty = $row['difficulty'];
+	$difficulty_db = $row['difficulty'];
 	
 	$semester = $semester_list["$semester_db"];
 	$college = $college_list["$college_db"];
+	$difficulty = $difficulty_list["$difficulty_db"];
+
 	echo <<<CONTENT
 	<div class="content-piece">
 		<div class="info">

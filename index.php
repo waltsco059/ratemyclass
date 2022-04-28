@@ -9,6 +9,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="scripts/class_form.js" defer></script>
     <script src="scripts/class_load.js" defer></script>
+    <script src="scripts/search_filter.js"></script>
+
 </head>
 <body id="homepage">
     <!-- Container/Background -->
@@ -25,16 +27,11 @@
             
             <!-- Navbar Search -->
             <div class="nav-search">
-                <form action="#">
-                    <input type="search"
-                        placeholder="Search Courses"
-                        name="home-search">
-                </form>
+            	<input id ="filter" type="search" placeholder="Search Courses" name="home-search">
             </div>
 
             <!-- Navbar Links -->
             <div class="nav-link">
-                <img src="img/pfp.png" alt="pfp"> 
                 <a href="account/account.html"> Account </a>
                 <a href="campus/campus.html"> Campus </a>
                 <a href="contact/contact.html"> Contact </a>
@@ -128,7 +125,7 @@
 
             <!--Contact Form-->
             <div id="class-add-popup">
-                <form class="class-add-form" action="scripts/class_add.php" id="class-add-form" method="POST">
+                <form class="class-add-form" action="scripts/class_todb.php" id="class-add-form" method="POST">
                     <h1>Add a Class</h1>
                     <div>
                         <div>
