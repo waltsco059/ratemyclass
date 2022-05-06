@@ -1,3 +1,6 @@
+// class_form.js
+// The popup handler for adding a class to the database
+
 $(document).ready(function () {
     $("#class-add-icon").click(function () {
         $("#class-add-popup").show();

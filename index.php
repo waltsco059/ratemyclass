@@ -9,6 +9,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="scripts/class_form.js" defer></script>
     <script src="scripts/class_load.js" defer></script>
+    <script src="scripts/search_filter.js"></script>
+    <script src="scripts/select_filter.js"></script>
+
+
+
 </head>
 <body id="homepage">
     <!-- Container/Background -->
@@ -25,27 +30,32 @@
             
             <!-- Navbar Search -->
             <div class="nav-search">
-                <form action="#">
-                    <input type="search"
-                        placeholder="Search Courses"
-                        name="home-search">
-                </form>
+            	<input id ="filter" type="search" placeholder="Search Courses" name="home-search">
             </div>
 
             <!-- Navbar Links -->
             <div class="nav-link">
-                <img src="img/pfp.png" alt="pfp"> 
-                <a href="account/account.html"> Account </a>
-                <a href="campus/campus.html"> Campus </a>
-                <a href="contact/contact.html"> Contact </a>
-                <a href="login/login.php"> Sign In </a> 
+            <?php
+            if($_COOKIE['logged_in'] == TRUE) {
+                echo "<a href='account/account.php'> Account </a>";
+            }
+            ?>
+                <a href="campus/campus.php"> Campus </a>
+                <a href="contact/contact.php"> Contact </a>
+            <?php
+            if($_COOKIE['logged_in'] == TRUE) {
+                echo "<a href='scripts/delete_cookie.php'> Sign Out </a>";
+            }
+            else {
+                echo "<a href='login/login.php'> Sign In </a>";
+            }
+            ?>
             </div>
         </div>
 
         <!-- Filter -->
         <div id="filter-section">
             <h1>Class Filter</h1>
-            <form id="filter-classes">
                 <table>
                     <tr>
                         <td><label for="filter-college">College</label></td>
@@ -55,6 +65,11 @@
                             <option value="la">Liberal Arts</option>
                             <option value="en">Engineering</option>
                             <option value="bu">Business</option>
+			                <option value="ed">Education</option>
+                            <option value="co">Communication</option>
+                            <option value="fa">Fine Arts</option>
+                            <option value="lw">Law</option>
+			                <option value="un">Undergraduate</option>
                         </select></td>
                     </tr>
 
@@ -104,11 +119,9 @@
                     </tr>
 
                     <tr>
-                        <td></td>
-			<td><input type="submit" value = "Filter"></td>
+                        <td><input type="button" value="Reset" onclick="window.location.reload();"></td>
                     </tr>
                 </table>
-            </form>
         </div>
 
         <!-- Main Content -->
@@ -119,16 +132,21 @@
                 Welcome to Rate My Class, a site that focuses on rating individual classes at UT Austin. If you cannot find a class by using the navigation bar
                 above or the filter to the left, then feel free to add a class by clicking the button below. To rate a class, you will be required to login.
                 </p>
+      		
             </div>
             
             <!-- Add Class -->
             <div id="class-add-icon">
-                <button>Add Class</button>
+	    <?php
+		if($_COOKIE['logged_in'] == TRUE) {
+  			echo "<button>Add Class</button>";
+		}
+	    ?>
             </div>
 
-            <!--Contact Form-->
+            <!--Add Class Form-->
             <div id="class-add-popup">
-                <form class="class-add-form" action="scripts/class_add.php" id="class-add-form" method="POST">
+                <form class="class-add-form" action="scripts/class_todb.php" id="class-add-form" method="POST">
                     <h1>Add a Class</h1>
                     <div>
                         <div>
@@ -152,12 +170,17 @@
                         </div>
                         <div>
                             <select id="add-college" name="add-college" class="inputBox">
-                            <option value="None">Select</option>
-                            <option value="ns">Natural Sciences</option>
-                            <option value="la">Liberal Arts</option>
-                            <option value="en">Engineering</option>
-                            <option value="bu">Business</option>
-                        </select>
+                                <option value="None">Select</option>
+                                <option value="ns">Natural Sciences</option>
+                            	<option value="la">Liberal Arts</option>
+                            	<option value="en">Engineering</option>
+                            	<option value="bu">Business</option>
+			    	            <option value="ed">Education</option>
+                            	<option value="co">Communication</option>
+                            	<option value="fa">Fine Arts</option>
+                            	<option value="lw">Law</option>
+			    	            <option value="un">Undergraduate</option>
+                            </select>
                         </div>
                     </div>
                     <div>
@@ -222,7 +245,7 @@
     </div>
 
     <footer>
-        Page Last Updated: 04/15/2022
+        Page Last Updated: 05/06/2022
     </footer>
 
 </body>

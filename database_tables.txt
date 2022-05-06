@@ -1,0 +1,30 @@
+# Copy/Paste into MySQL to create consistent users, rates, & class tables
+
+CREATE TABLE class (
+	cid INT AUTO_INCREMENT,
+	cname VARCHAR(50),
+	pname VARCHAR(50),
+	semester CHAR(3),
+	college CHAR(2),
+	prating INT,
+	crating INT,
+	difficulty INT,
+	PRIMARY KEY ( cid )
+);
+
+CREATE TABLE rates (
+	rid INT AUTO_INCREMENT,
+	cid INT,
+	uid INT,
+	prating INT,
+	crating INT,
+	difficulty INT,
+	PRIMARY KEY ( rid )
+);
+
+CREATE TABLE users (
+	uid INT AUTO_INCREMENT,
+	username VARCHAR(10),
+	password VARCHAR(10),
+	PRIMARY KEY ( uid )
+);

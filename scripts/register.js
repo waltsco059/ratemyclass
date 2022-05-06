@@ -1,3 +1,6 @@
+// register.js
+// Handles displaying login requirements
+
 var helpers = ["Your name must be in the form: first name, middle initial., last name",
                "Your email address must have the form: user@domain",
                "Your user ID must have at least six characters",
